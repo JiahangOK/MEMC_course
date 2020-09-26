@@ -1,2 +1,26 @@
-# MEMCNotes
-Methematics for Engineering Master Candidates.
+# 工程硕士数学笔记
+
+[TOC]
+推荐mooc上东北大学的《数值分析》课程 [[链接]](https://www.icourse163.org/learn/NEU-1002089009?tid=1461070442)
+
+## 1.绪论
+---
+### 1.1 误差
+### 1.2 有效数字
+### 1.3 数值计算的原则
+
+
+## 2 解线性方程组的直接解法
+---
+### 2.1顺序Gauss消去法
+
+消元下去，最后得到矩阵是：
+
+$$(A^{(n)}, b^{(n)}) = \left[ \begin{array}{ccccc|c} a^{(1)}_{11} & a^{(1)}_{12} & a^{(1)}_{13} & \cdots & a^{(1)}_{1n} & b^{(1)}_{1} \\ 0 & a^{(2)}_{22} & a^{(2)}_{23} & \cdots & a^{(2)}_{2n} & b^{(2)}_{2} \\ \cdots & \cdots & \cdots & \cdots & \cdots & \cdots\\ 0 & 0 & 0 & \cdots & a^{(n)}_{nn} & b^{(n)}_{n}\end{array} \right]$$
+
+顺序Gauss消去法中，$a^{(k)}_{kk}(k=1,2,...,n)$被称为主元素，那么：
+$$主元素都不为0\Leftrightarrow矩阵A的各阶顺序主子式都不为0$$
+
+这样，就可以在真正计算前判断是否可以用顺序Gauss消去法进行计算，而不是中途才发现。
+
+### 2.2 列主元Gauss消去法
