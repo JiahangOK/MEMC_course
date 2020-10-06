@@ -52,13 +52,16 @@ end
 % 回代
 for i=n:-1:1
     sum=0;
-    for j=i:n
-        sum=sum+x(j,1)*Ab(i,j);
+    for j=i+1:n
+        sum=sum+x(i,1)*Ab(i,j);
     end
     x(i,1)=(Ab(i,n+1)-sum)/Ab(i,i);
 end
 
+
+
 disp("解向量x：")
 disp(x)
+
 end
 
