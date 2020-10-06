@@ -1,4 +1,4 @@
-function x = GussianColumnElimination(A, b)
+function [x] = GussianColumnElimination(A, b)
 % GussianColumnElimination
 % 列主元消去法的实现
 
@@ -10,16 +10,13 @@ disp(b);
 disp('detA:');
 disp(det(A));
 
-[row_num, col_num] = size(A);
-n = row_num;
+[n, n] = size(A);
+
+% 获取增广矩阵
+Ab =  [A, b]
 
 
-Ab = 
-
-
-
-
-
+x = 0;
 
 end
 
