@@ -20,10 +20,10 @@ for m=1:n
         elseif m>j
             D(m,j)=0;
             L(m,j)=0;
-            U(m,j)=A(m,j);
+            U(m,j)=-A(m,j);
         elseif m<j
             D(m,j)=0;
-            L(m,j)=A(m,j);
+            L(m,j)=-A(m,j);
             U(m,j)=0;
         end
     end
