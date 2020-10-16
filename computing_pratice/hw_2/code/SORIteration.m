@@ -1,14 +1,16 @@
-function SORIteration(n,A,b,w)
+function [k,L_w]=SORIteration(n,A,b,w)
 %SORITERATION SOR迭代法
 %   n：系数矩阵的维度
 %   A：系数矩阵
 %   b：右端项
 %   w：松弛因子
+%   k：迭代次数
+%   L_w：迭代矩阵
 
 k=0; % 迭代次数
 x=ones(n,1); % 初始解向量
 
-% 构造系数矩阵的对角部分D，严格上三角部分U，严格下三角部分L
+% 构造系数矩阵的对角部分D，严格上三角部分-U，严格下三角部分-L
 D=zeros(n,n);
 L=zeros(n,n);
 U=zeros(n,n);
@@ -34,15 +36,11 @@ end
 L_w=inv(D-w*L)*((1-w)*D+w*U);
 f_J=w*inv(D-w*L)*b;
 
-
 % 迭代
 while norm(x,inf)>1e-6
     x=L_w*x+f_J;
     k=k+1;
 end
-
-fprintf("w=%.1f，SOR迭代次数：%d\n",w,k)
-fprintf("收敛速度：%.4f\n",-log(max(abs(eig(L_w)))))
 
 end
 
