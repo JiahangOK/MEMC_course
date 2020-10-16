@@ -39,8 +39,8 @@ while norm(x,inf)>1e-6
     k=k+1;
 end
 
-sprintf("Jacobi迭代次数：%d", k)
-sprintf("收敛速度：%.4f",-log(max(abs(eig(B_J)))))
+fprintf("Jacobi迭代次数：%d\n", k)
+fprintf("收敛速度：%.4f\n",-log(max(abs(eig(B_J)))))
 
 end
 

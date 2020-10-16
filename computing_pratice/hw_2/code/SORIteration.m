@@ -31,22 +31,18 @@ for m=1:n
 end
 
 % 构造迭代矩阵L_w
-L_w=(D-w*L)\((1-w)*D+w*U);
-f_J=w*((D-w*L)\b);
+L_w=inv(D-w*L)*((1-w)*D+w*U);
+f_J=w*inv(D-w*L)*b;
+
 
 % 迭代
 while norm(x,inf)>1e-6
     x=L_w*x+f_J;
     k=k+1;
 end
-% while k<=3
-%     x1=L_w*x+f_J;
-%     x=x1;
-%     k=k+1;
-%     x
-% end
-sprintf("w=%.1f，SOR迭代次数：%d",w,k)
-sprintf("收敛速度：%.4f",-log(max(abs(eig(L_w)))))
+
+fprintf("w=%.1f，SOR迭代次数：%d\n",w,k)
+fprintf("收敛速度：%.4f\n",-log(max(abs(eig(L_w)))))
 
 end
 
