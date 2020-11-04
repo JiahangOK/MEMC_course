@@ -17,6 +17,7 @@ while true
     k = k + 1;
 %     v'
 end
+v'
 fprintf(" ========================== \n");
 
 fprintf("Aitken 加速后：\n");
@@ -42,7 +43,7 @@ while true
     k = k + 1;
 %     v'
 end
-
+v'
 fprintf(" ========================== \n");
 fprintf("逆幂迭代法：\n");
 A = [5,4,1,1;4,5,1,1;1,1,4,2;1,1,2,4];
@@ -72,4 +73,7 @@ for q = q_list
     end
     fprintf("k=%d\n", k);       
     fprintf("m^-1+q= %f\n", 1/m+q);
+    v'
 end
+A = [5,4,1,1;4,5,1,1;1,1,4,2;1,1,2,4];
+[x,y]=eig(A)
